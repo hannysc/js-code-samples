@@ -1,0 +1,69 @@
+<script>
+
+var Dragon = function(name, color, points) {
+  this.name = name;
+  this.color = color;
+  this.points = points;
+
+  Dragon.prototype.attack = function(dragAttacked) {
+    var num = Math.floor(Math.random() * 6) + 1;
+
+    switch (num) {
+      case 1:
+        this.points += 10;
+        dragAttacked.points -= 10;
+        alert (this.name + " rolled a " + num + " and received 10 points " + this.points +" vs " + dragAttacked.name + " " + dragAttacked.points);
+      break;
+      case 2:
+        this.points += 25;
+        dragAttacked.points -= 25
+        alert (this.name + " rolled a " + num + " and received 25 points " + this.points + " vs " + dragAttacked.name + " " + dragAttacked.points);
+      case 3:
+          this.points -= 25;
+          dragAttacked.points += 25;
+          alert (this.name + " rolled a " + num + " and lost 25 points " + this.points + " vs " + dragAttacked.name + " " + dragAttacked.points);
+      break;
+      case 4:
+          this.points -= 10;
+          dragAttacked.points += 10;
+          alert (this.name + " rolled a " + num + " and lost 10 points " + this.points + " vs " + dragAttacked.name + "  " + dragAttacked.points);
+      break;
+      case 5:
+          this.points += dragAttacked.points;
+          dragAttacked.points = 0;
+          alert (this.name + " rolled a " + num + " and received all of " + dragAttacked.name + " points leaving " + dragAttacked.name + " with " + dragAttacked.points);
+      break;
+      case 6:
+          dragAttacked.points += this.points;
+          this.points = 0;
+          alert (this.name + " rolled a " + num + " and lost all of their points to " + dragAttacked.name + " points leaving " + dragAttacked.name + " with " + dragAttacked.points);
+      break;
+      default:
+        alert("You did not start with a number between 1 and 6.")
+        break;
+
+    }
+  };
+}
+
+var drag1 = new Dragon ("Puff","brown",100);
+var drag2 = new Dragon ("Draco", "red", 100)
+
+var again = "y";
+var attacker;
+var attacked;
+
+while (again == "y") {
+  attacker = prompt("Who is the attacker, drag1 or drag2");
+  attacked = prompt("Who is the attacked, drag1 or drag2");
+
+  if(attacker == "drag1") {
+    drag1.attack(drag2);
+  }else if (attacker == "drag2") {
+    drag2.attack(drag1);
+  }
+}
+// alert(drag1.name + " the " + drag1.color + " dragon has " + drag1.points + " points.")
+
+
+</script>
