@@ -1,0 +1,33 @@
+<script>
+
+var sectionA;
+var sectionB;
+var sectionC;
+var totalTickets;
+
+// getting data
+
+sectionA = prompt("How many tickets were sold in section A?");
+
+while (sectionA > 300) {
+  sectionA = prompt("You can only sell 300 tickets for this section. Enter the correct number of tickets sold.");
+}
+
+sectionB = prompt("How many tickets were sold in section B?");
+
+while (sectionB > 500) {
+  sectionB = prompt("You can only sell 500 tickets for this section. Enter the correct number of tickets sold.");
+}
+
+sectionC = prompt("How many tickets were sold in section C?");
+
+while (sectionC > 200) {
+  sectionC = prompt("You can only sell 200 tickets for this section. Enter the correct number of tickets sold.");
+}
+
+totalTickets = (sectionA * 20) + (sectionB * 15) + (sectionC * 10);
+
+document.write("Your total income based off the number of tickets sold in each section is $" + totalTickets + ".");
+
+
+</script>

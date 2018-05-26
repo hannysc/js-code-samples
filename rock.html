@@ -1,0 +1,53 @@
+<script>
+
+function rps() {
+var playersChoice;
+var compChoice;
+var elements = [];
+elements[0] = "rock";
+elements[1] = "paper";
+elements[2] = "scissors";
+
+// Player's Choice
+
+playersChoice = prompt("Chooose rock, paper, or scissors");
+
+var num = Math.floor(Math.random() * 3);
+
+// Computer's Choice
+
+compChoice = elements[num];
+
+if(playersChoice == compChoice){
+  alert("You tied");
+}
+
+else if (playersChoice == "rock"
+          && compChoice == "scissors") {
+      alert("You chose " + playersChoice + " Computer chose " + compChoice + " You win");
+}
+
+else if (playersChoice == "scissors"
+          && compChoice == "paper") {
+      alert("You chose " + playersChoice + " Computer chose " + compChoice + " You win");
+}
+
+else if (playersChoice == "paper"
+          && compChoice == "rock") {
+      alert("You chose " + playersChoice + " Computer chose " + compChoice + " You win");
+}
+
+else {
+  alert("You lose");
+}
+
+var again;
+again =  prompt("Shall we play a game?");
+
+if(again=="yes") {
+  rps();
+}
+}
+rps();
+
+</script>

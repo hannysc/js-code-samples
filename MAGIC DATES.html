@@ -1,0 +1,47 @@
+<html>
+<head>
+
+  <h1>Is Your Date a Magic Date?</h1>
+
+</head>
+
+<body>
+
+  <div>
+    Enter day: <input type="text" id="day" /> <br />
+    Enter month: <input type="text" id="month" /> <br />
+    Enter year: <input type="text" id="year" /> <br />
+    <input type="submit" value="Lucky Number?" id="submit" onclick="luckyNumber()" />
+  </div>
+
+  <div id="result">
+  </div>
+
+<script>
+
+function luckyNumber() {
+
+// Declare varibles
+
+  var month, day, year, dayXmonth;
+
+day = document.getElementById('day').value;
+month = document.getElementById('month').value;
+year = document.getElementById('year').value;
+
+dayXmonth = day * month;
+
+if(dayXmonth == year) {
+  document.getElementById('result').innerHTML = "This is a magic date.";
+}
+
+else {
+  document.getElementById('result').innerHTML = "This is NOT a magic date.";
+}
+
+}
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<script>
+
+function main() {
+  var sales, commissionRate, advancedPay, pay;
+
+  sales = getSales();
+  advancedPay = getAdvancedPay();
+  commissionRate = determineCommissionRate(sales);
+
+    pay = sales * commissionRate - advancedPay;
+
+  document.write("The pay is $", pay, ".");
+
+  if(pay < 0) {
+    document.write(" The salesperson must reimburse the company.");
+  }
+}
+
+function getSales() {
+  var monthlySales = 0;
+
+  monthlySales = prompt("Enter the salesperson's monthly sales.");
+
+  return monthlySales;
+}
+
+function getAdvancedPay() {
+  var advanced = 0;
+
+  advanced = prompt("Enter the amount of advanced pay, or 0 if no advanced pay was given.");
+
+  return advanced;
+}
+
+function determineCommissionRate(sales) {
+  var rate;
+
+  if(sales < 10000) {
+    rate = .1;
+  }
+  else if(sales >= 10000 && sales <= 14999) {
+    rate = .12;
+  }
+  else if(sales >= 15000 && sales <= 17999) {
+    rate = .14;
+  }
+  else if(sales >= 18000 && sales <=21999) {
+    rate = .16;
+  }
+  else {
+    rate = .18;
+  }
+  return rate;
+}
+
+main();
+
+</script>

@@ -1,0 +1,15 @@
+<script>
+var SIZE = 7;
+var dailySales = [];
+var totalSales = 0;
+
+for(i=0; i< SIZE; i++) {
+  dailySales[i] = prompt("What are the sales for the day?");
+}
+
+for(i=0; i< SIZE; i++) {
+  totalSales = totalSales + parseInt(dailySales[i]);
+}
+
+document.write("Your total sales are $" + totalSales);
+</script>

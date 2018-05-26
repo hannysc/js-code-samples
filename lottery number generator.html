@@ -1,0 +1,35 @@
+<!-- /* program that uses an array to store random numbers between 0 and 9 and then display those numbers
+
+1. create an array that stores 7 random numbers
+2. generate 1st random number and store in array[0]
+3. generate 2nd random number and store in array[0]
+...
+10. create loop that displays contents of array
+
+Constant Integer SIZE = 7
+
+Declare Integer number[SIZE]
+  For i = 0 to SIZE -1
+    Set number[i] = random (0,9)
+  End For
+
+  For i = 0 to SIZE -1
+    Display "Your lottery numbers are ", number[i] , " "
+  End For
+*/ -->
+
+<script>
+var SIZE = 7;
+var number = [];
+
+for(i=0; i< SIZE; i++) {
+  number[i] = Math.floor(Math.random() * 10);
+}
+
+document.write("Your lottery numbers are: <br /> <br />");
+for(i=0; i<SIZE; i++) {
+  document.write(number[i] + " <br /> <br />");
+}
+
+
+</script>

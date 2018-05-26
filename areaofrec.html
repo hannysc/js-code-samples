@@ -1,0 +1,58 @@
+<html>
+<head>
+
+  <h1>Area of Rectangles</h1>
+
+</head>
+
+<body>
+
+  <div>
+    Enter rectangle 1 height: <input type="text" id="height1" /> <br />
+    Enter rectangle 1 width: <input type="text" id="width1" /> <br />
+    Enter rectangle 2 height: <input type="text" id="height2" /> <br />
+    Enter rectangle 2 width: <input type="text" id="width2" /> <br />
+    <input type="submit" value="Area" id="submit" onclick="area()" />
+  </div>
+
+  <div id="result">
+  </div>
+
+<script>
+
+function area() {
+
+// Declare varibles
+
+  var height1, width1, height2, width2, hXwRec1, hXwRec2;
+
+height1 = document.getElementById('height1').value;
+width1 = document.getElementById('width1').value;
+height2 = document.getElementById('height2').value;
+width2 = document.getElementById('width2').value;
+
+// Set hXwRec1 and hXwRec2 equal to height1 * width1 and height2 * width2
+
+hXwRec1 = height1 * width1;
+hXwRec2 = height2 * width2;
+
+// Comparison statement
+
+if(hXwRec1 > hXwRec2) {
+  document.getElementById('result').innerHTML = "Rectangle 1 is larger than Rectangle 2.";
+}
+
+else if(hXwRec1 < hXwRec2){
+  document.getElementById('result').innerHTML = "Rectangle 2 is larger than Rectangle 1.";
+}
+
+else {
+  document.getElementById('result').innerHTML = "The rectangles are equal.";
+}
+
+}
+</script>
+
+</body>
+
+</html>
